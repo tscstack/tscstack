@@ -14,13 +14,13 @@ export const seoMeta = (opts: SeoOptions) => {
   const VITE_BASE_URL = import.meta.env.VITE_BASE_URL;
 
   const DEFAULT_TITLE =
-    "ConvexShip - The Ultimate Convex Boilerplate for Shipping SaaS Fast";
+    "ConvexShip - The Ultimate Convex Boilerplate for Shipping Fast";
 
   const {
     title,
     url,
     siteName = "ConvexShip",
-    description = "ConvexShip is a production-ready Convex boilerplate to ship SaaS apps fast. Built with Convex, TanStack Router & Query, Clerk auth, strict TypeScript, shadcn/ui, and modern workflows—no fluff, just shipping.",
+    description = "ConvexShip is a production-ready Convex boilerplate to ship SaaS apps fast. Built with Convex, TanStack Start, Clerk auth, strict TypeScript, shadcn/ui, and modern workflows—no fluff, just shipping.",
     keywords = "Convex boilerplate, Convex starter kit, Convex SaaS boilerplate, TanStack Convex starter, Convex Clerk auth, Convex TypeScript starter, Convex realtime SaaS, Convex fullstack boilerplate, ship Convex apps, ConvexShip",
     image = `${VITE_BASE_URL}/og-image.webp`,
     twitterHandle = "@itsithu",
