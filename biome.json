@@ -1,0 +1,107 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": false
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "**",
+      "!.netlify",
+      "!.tanstack",
+      "!convex/_generated",
+      "!dist",
+      "!node_modules",
+      "!**/routeTree.gen.ts"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentWidth": 2,
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "semicolons": "always",
+      "trailingCommas": "none"
+    }
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "trailingCommas": "none"
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    },
+    "linter": {
+      "enabled": false
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              [":BUN:", ":NODE:"],
+
+              ":BLANK_LINE:",
+
+              ["react", "react/**", "react-dom", "react-dom/**"],
+
+              ":BLANK_LINE:",
+
+              ["@tanstack", "@tanstack/**"],
+
+              ":BLANK_LINE:",
+
+              ":PACKAGE:",
+
+              ":BLANK_LINE:",
+
+              ["convex", "convex/**"],
+
+              ":BLANK_LINE:",
+
+              ["~/components", "~/components/**"],
+              ["~/functions", "~/functions/**"],
+              ["~/hooks", "~/hooks/**"],
+              ["~/libs", "~/libs/**"],
+              ["~/utils", "~/utils/**", "!~/utils/types"],
+              ["~", "~/**", "!~/utils/types"],
+
+              ":BLANK_LINE:",
+
+              ["~/utils/types"],
+
+              ":BLANK_LINE:",
+
+              ["../../../**"],
+              ["../../**"],
+              ["../**"],
+              ["./**"]
+            ]
+          }
+        }
+      }
+    }
+  }
+}
