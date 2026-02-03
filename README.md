@@ -1,6 +1,6 @@
 # IndieShip
 
-- Website: https://indieship.netlify.app
+- Website: https://indieship.xyz
+- Docs: https://indieship.xyz/docs
 - GitHub: https://github.com/get-indieship/indieship
-- Docs: https://itsithu.gitbook.io/indieship/
 - Twitter: https://twitter.com/itsithu

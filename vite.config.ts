@@ -12,18 +12,26 @@ import viteTsConfigPaths from "vite-tsconfig-paths";
 const config = defineConfig({
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url))
+      "~": fileURLToPath(new URL("./src", import.meta.url))
     }
   },
   plugins: [
     devtools(),
     netlify(),
-    // this is the plugin that enables path aliases
     viteTsConfigPaths({
       projects: ["./tsconfig.json"]
     }),
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart({
+      prerender: {
+        enabled: true,
+        crawlLinks: true
+      },
+      sitemap: {
+        enabled: true,
+        host: "https://indieship.xyz" // TODO: update this with your domain
+      }
+    }),
     viteReact()
   ]
 });
