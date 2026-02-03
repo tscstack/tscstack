@@ -4,7 +4,7 @@ export type SeoOptions = {
   siteName?: string;
   description?: string;
   keywords?: string;
-  image?: string;
+  ogImageUrl?: string;
   twitterHandle?: string;
   type?: "website" | "article";
   locale?: string;
@@ -22,7 +22,7 @@ export const seoMeta = (opts: SeoOptions) => {
     siteName = "IndieShip",
     description = "IndieShip is a headless TanStack + Convex boilerplate to ship SaaS apps fast. Built with TanStack Start, Clerk auth, strict TypeScript, shadcn/ui, and modern workflows—no fluff, just shipping.",
     keywords = "TanStack + Convex boilerplate, TanStack + Convex starter kit, TanStack Start + Convex + Clerk, TanStack + Convex SaaS boilerplate, TanStack + Convex starter, TanStack + Convex Clerk auth, TanStack + Convex TypeScript starter, TanStack + Convex realtime SaaS, TanStack + Convex fullstack boilerplate, ship TanStack + Convex apps, IndieShip",
-    image = `${VITE_BASE_URL}/og-image.png`,
+    ogImageUrl = `${VITE_BASE_URL}/og-image.png`,
     twitterHandle = "@itsithu",
     type = "website",
     locale = "en_US"
@@ -52,7 +52,7 @@ export const seoMeta = (opts: SeoOptions) => {
     { property: "og:title", content: normalizedTitle },
     { property: "og:description", content: description },
     { property: "og:url", content: normalizedUrl },
-    { property: "og:image", content: image },
+    { property: "og:image", content: ogImageUrl },
     { property: "og:site_name", content: siteName },
     { property: "og:locale", content: locale },
 
@@ -60,7 +60,7 @@ export const seoMeta = (opts: SeoOptions) => {
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: normalizedTitle },
     { name: "twitter:description", content: description },
-    { name: "twitter:image", content: image },
+    { name: "twitter:image", content: ogImageUrl },
     { name: "twitter:site", content: twitterHandle },
     { name: "twitter:creator", content: twitterHandle },
     { name: "twitter:url", content: normalizedUrl }
