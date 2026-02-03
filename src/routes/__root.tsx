@@ -14,6 +14,7 @@ import { ConvexQueryClient } from "@convex-dev/react-query";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 
 import { ThemeProvider } from "~/components/theme-provider";
+import { Toaster } from "~/components/ui/sonner";
 import { seoMeta } from "~/utils/seo";
 
 import appCss from "../styles.css?url";
@@ -82,6 +83,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               enableSystem
               disableTransitionOnChange
             >
+              <Toaster />
               {children}
             </ThemeProvider>
           </ConvexProviderWithClerk>

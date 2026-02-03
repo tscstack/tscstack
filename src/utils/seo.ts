@@ -14,15 +14,15 @@ export const seoMeta = (opts: SeoOptions) => {
   const VITE_BASE_URL = import.meta.env.VITE_BASE_URL;
 
   const DEFAULT_TITLE =
-    "ConvexShip - The Ultimate Convex Boilerplate for Shipping Fast";
+    "IndieShip - The Headless TanStack + Convex Boilerplate for Shipping Fast";
 
   const {
     title,
     url,
-    siteName = "ConvexShip",
-    description = "ConvexShip is a production-ready Convex boilerplate to ship SaaS apps fast. Built with Convex, TanStack Start, Clerk auth, strict TypeScript, shadcn/ui, and modern workflows—no fluff, just shipping.",
-    keywords = "Convex boilerplate, Convex starter kit, Convex SaaS boilerplate, TanStack Convex starter, Convex Clerk auth, Convex TypeScript starter, Convex realtime SaaS, Convex fullstack boilerplate, ship Convex apps, ConvexShip",
-    image = `${VITE_BASE_URL}/og-image.webp`,
+    siteName = "IndieShip",
+    description = "IndieShip is a headless TanStack + Convex boilerplate to ship SaaS apps fast. Built with TanStack Start, Clerk auth, strict TypeScript, shadcn/ui, and modern workflows—no fluff, just shipping.",
+    keywords = "TanStack + Convex boilerplate, TanStack + Convex starter kit, TanStack + Convex SaaS boilerplate, TanStack + Convex starter, TanStack + Convex Clerk auth, TanStack + Convex TypeScript starter, TanStack + Convex realtime SaaS, TanStack + Convex fullstack boilerplate, ship TanStack + Convex apps, IndieShip",
+    image = `${VITE_BASE_URL}/og-image.png`,
     twitterHandle = "@itsithu",
     type = "website",
     locale = "en_US"

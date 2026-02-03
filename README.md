@@ -1,6 +1,6 @@
-# ConvexShip
+# IndieShip
 
-- Website: https://convexship.netlify.app
-- GitHub: https://github.com/convexship/convexship
-- Docs: https://itsithu.gitbook.io/convexship/
+- Website: https://indieship.netlify.app
+- GitHub: https://github.com/indieship/indieship
+- Docs: https://itsithu.gitbook.io/indieship/
 - Twitter: https://twitter.com/itsithu
