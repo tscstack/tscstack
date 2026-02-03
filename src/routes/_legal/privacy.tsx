@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Legal } from "~/components/legal";
-import { type LegalSection, legalConfig } from "~/utils/config";
+import { Legal, type LegalSection, legalConfig } from "~/components/legal";
 import { seoMeta } from "~/utils/seo";
 
 const { minAge, productName, supportEmail, businessName } = legalConfig;
