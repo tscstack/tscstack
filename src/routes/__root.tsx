@@ -13,6 +13,8 @@ import { ClerkProvider, useAuth } from "@clerk/tanstack-react-start";
 import { ConvexQueryClient } from "@convex-dev/react-query";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 
+import { ErrorComponent } from "~/components/error-component";
+import { NotFoundComponent } from "~/components/not-found-component";
 import { ThemeProvider } from "~/components/theme-provider";
 import { Toaster } from "~/components/ui/sonner";
 import { seoMeta } from "~/utils/seo";
@@ -55,8 +57,9 @@ export const Route = createRootRouteWithContext<{
       }
     ]
   }),
-
-  shellComponent: RootDocument
+  shellComponent: RootDocument,
+  notFoundComponent: NotFoundComponent,
+  errorComponent: (e) => <ErrorComponent message={e.error.message} />
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {

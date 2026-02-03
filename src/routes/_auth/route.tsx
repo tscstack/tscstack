@@ -3,8 +3,12 @@ import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
 import { Button } from "~/components/ui/button";
+import { redirectIfAuthenticatedFn } from "~/functions/auth";
 
 export const Route = createFileRoute("/_auth")({
+  beforeLoad: async () => {
+    await redirectIfAuthenticatedFn();
+  },
   component: RouteComponent
 });
 
