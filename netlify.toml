@@ -1,7 +1,0 @@
-[build]
-  command = "vite build"
-  dir = "dist/client"
-[dev]
-  command = "bun run dev"
-  targetPort = 3000
-  port = 8888

@@ -6,3 +6,4 @@ node_modules
 
 .tanstack
 .netlify
+.wrangler

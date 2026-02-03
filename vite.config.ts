@@ -28,8 +28,8 @@ const config = defineConfig({
         crawlLinks: true
       },
       sitemap: {
-        enabled: true,
-        host: "https://indieship.xyz" // TODO: update this with your domain
+        enabled: false,
+        host: "yourappdomain"
       }
     }),
     viteReact()

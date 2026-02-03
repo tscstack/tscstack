@@ -2,10 +2,11 @@
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
   "version": "0.2",
   "words": [
-    "corentints",
-    "indieship",
+    "yourappname",
+    "yourappdomain",
     "itsithu",
     "Linecap",
+    "corentints",
     "Linejoin",
     "lucide",
     "nowrap",
