@@ -21,14 +21,15 @@ export const seoMeta = (opts: SeoOptions) => {
     url,
     siteName = "IndieShip",
     description = "IndieShip is a headless TanStack + Convex boilerplate to ship SaaS apps fast. Built with TanStack Start, Clerk auth, strict TypeScript, shadcn/ui, and modern workflows—no fluff, just shipping.",
-    keywords = "TanStack + Convex boilerplate, TanStack + Convex starter kit, TanStack + Convex SaaS boilerplate, TanStack + Convex starter, TanStack + Convex Clerk auth, TanStack + Convex TypeScript starter, TanStack + Convex realtime SaaS, TanStack + Convex fullstack boilerplate, ship TanStack + Convex apps, IndieShip",
+    keywords = "TanStack + Convex boilerplate, TanStack + Convex starter kit, TanStack Start + Convex + Clerk, TanStack + Convex SaaS boilerplate, TanStack + Convex starter, TanStack + Convex Clerk auth, TanStack + Convex TypeScript starter, TanStack + Convex realtime SaaS, TanStack + Convex fullstack boilerplate, ship TanStack + Convex apps, IndieShip",
     image = `${VITE_BASE_URL}/og-image.png`,
     twitterHandle = "@itsithu",
     type = "website",
     locale = "en_US"
   } = opts;
 
-  const normalizedTitle = title === "default" ? DEFAULT_TITLE : title;
+  const normalizedTitle =
+    title === "default" ? DEFAULT_TITLE : `${title} | ${DEFAULT_TITLE}`;
 
   const normalizedUrl = url.startsWith("http")
     ? url
