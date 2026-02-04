@@ -13,6 +13,7 @@ import { ClerkProvider, useAuth } from "@clerk/tanstack-react-start";
 import { ConvexQueryClient } from "@convex-dev/react-query";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 
+import { PostHogProvider } from "~/components/analytics/posthog-provider";
 import { ErrorComponent } from "~/components/error-component";
 import { NotFoundComponent } from "~/components/not-found-component";
 import { ThemeProvider } from "~/components/theme-provider";
@@ -73,24 +74,26 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <ClerkProvider
-          publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}
-        >
-          <ConvexProviderWithClerk
-            client={convexQueryClient.convexClient}
-            useAuth={useAuth}
+        <PostHogProvider>
+          <ClerkProvider
+            publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}
           >
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
+            <ConvexProviderWithClerk
+              client={convexQueryClient.convexClient}
+              useAuth={useAuth}
             >
-              <Toaster />
-              {children}
-            </ThemeProvider>
-          </ConvexProviderWithClerk>
-        </ClerkProvider>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+              >
+                <Toaster position="top-center" />
+                {children}
+              </ThemeProvider>
+            </ConvexProviderWithClerk>
+          </ClerkProvider>
+        </PostHogProvider>
 
         <TanStackDevtools
           config={{

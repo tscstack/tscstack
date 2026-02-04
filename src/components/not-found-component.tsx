@@ -30,9 +30,6 @@ export const NotFoundComponent = () => {
             <Button variant="outline" asChild>
               <Link to="/">Go to home</Link>
             </Button>
-            <Button asChild>
-              <Link to="/dashboard">Go to Dashboard</Link>
-            </Button>
           </div>
         </EmptyContent>
       </Empty>
