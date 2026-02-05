@@ -28,7 +28,7 @@ const config = defineConfig({
         crawlLinks: true
       },
       sitemap: {
-        enabled: false,
+        enabled: true,
         host: "yourappdomain"
       }
     }),
