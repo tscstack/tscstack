@@ -14,7 +14,11 @@ export const Route = createFileRoute("/_authenticated/dashboard")({
 function RouteComponent() {
   return (
     <div>
-      Hello "/_authenticated/dashboard"! <UserButton />
+      <p>This is dashboard page</p>
+
+      <div className="mt-3">
+        <UserButton />
+      </div>
     </div>
   );
 }
