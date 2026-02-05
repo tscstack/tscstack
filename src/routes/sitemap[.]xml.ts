@@ -8,7 +8,7 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         const BASE_URL = process.env.VITE_BASE_URL;
-        const routes = ["", "/signin", "/signup", "/terms", "/privacy"];
+        const routes = ["", "/terms", "/privacy"];
 
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
