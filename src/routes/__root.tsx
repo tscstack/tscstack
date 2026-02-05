@@ -14,6 +14,7 @@ import { ConvexQueryClient } from "@convex-dev/react-query";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 
 import { PostHogProvider } from "~/components/analytics/posthog-provider";
+import { BuiltWithIndieShip } from "~/components/built-with-indie-ship";
 import { ErrorComponent } from "~/components/error-component";
 import { NotFoundComponent } from "~/components/not-found-component";
 import { ThemeProvider } from "~/components/theme-provider";
@@ -90,6 +91,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               >
                 <Toaster position="top-center" />
                 {children}
+
+                <div className="absolute bottom-2 left-2">
+                  <BuiltWithIndieShip />
+                </div>
               </ThemeProvider>
             </ConvexProviderWithClerk>
           </ClerkProvider>

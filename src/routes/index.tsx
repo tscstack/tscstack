@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { BuiltWithIndieShip } from "~/components/built-with-indie-ship";
 import { seoMeta } from "~/utils/seo";
 
 export const Route = createFileRoute("/")({
@@ -11,9 +10,5 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
-  return (
-    <p>
-      This is index page <BuiltWithIndieShip />
-    </p>
-  );
+  return <p>This is index page</p>;
 }
