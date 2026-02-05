@@ -5,6 +5,6 @@ node_modules
 .env.prod
 
 .tanstack
+.vercel
 .netlify
 .wrangler
-dist

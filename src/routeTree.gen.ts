@@ -12,13 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LegalRouteRouteImport } from './routes/_legal/route'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
-import { Route as AuthRouteRouteImport } from './routes/_auth/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LegalTermsRouteImport } from './routes/_legal/terms'
 import { Route as LegalPrivacyRouteImport } from './routes/_legal/privacy'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
-import { Route as AuthSignupRouteImport } from './routes/_auth/signup'
-import { Route as AuthSigninRouteImport } from './routes/_auth/signin'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -31,10 +28,6 @@ const LegalRouteRoute = LegalRouteRouteImport.update({
 } as any)
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthRouteRoute = AuthRouteRouteImport.update({
-  id: '/_auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -57,22 +50,10 @@ const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AuthSignupRoute = AuthSignupRouteImport.update({
-  id: '/signup',
-  path: '/signup',
-  getParentRoute: () => AuthRouteRoute,
-} as any)
-const AuthSigninRoute = AuthSigninRouteImport.update({
-  id: '/signin',
-  path: '/signin',
-  getParentRoute: () => AuthRouteRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/signin': typeof AuthSigninRoute
-  '/signup': typeof AuthSignupRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/privacy': typeof LegalPrivacyRoute
   '/terms': typeof LegalTermsRoute
@@ -80,8 +61,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/signin': typeof AuthSigninRoute
-  '/signup': typeof AuthSignupRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/privacy': typeof LegalPrivacyRoute
   '/terms': typeof LegalTermsRoute
@@ -89,44 +68,24 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/_auth': typeof AuthRouteRouteWithChildren
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/_legal': typeof LegalRouteRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/_auth/signin': typeof AuthSigninRoute
-  '/_auth/signup': typeof AuthSignupRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_legal/privacy': typeof LegalPrivacyRoute
   '/_legal/terms': typeof LegalTermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/sitemap.xml'
-    | '/signin'
-    | '/signup'
-    | '/dashboard'
-    | '/privacy'
-    | '/terms'
+  fullPaths: '/' | '/sitemap.xml' | '/dashboard' | '/privacy' | '/terms'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/sitemap.xml'
-    | '/signin'
-    | '/signup'
-    | '/dashboard'
-    | '/privacy'
-    | '/terms'
+  to: '/' | '/sitemap.xml' | '/dashboard' | '/privacy' | '/terms'
   id:
     | '__root__'
     | '/'
-    | '/_auth'
     | '/_authenticated'
     | '/_legal'
     | '/sitemap.xml'
-    | '/_auth/signin'
-    | '/_auth/signup'
     | '/_authenticated/dashboard'
     | '/_legal/privacy'
     | '/_legal/terms'
@@ -134,7 +93,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AuthRouteRoute: typeof AuthRouteRouteWithChildren
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   LegalRouteRoute: typeof LegalRouteRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -161,13 +119,6 @@ declare module '@tanstack/react-router' {
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_auth': {
-      id: '/_auth'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof AuthRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -198,36 +149,8 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDashboardRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_auth/signup': {
-      id: '/_auth/signup'
-      path: '/signup'
-      fullPath: '/signup'
-      preLoaderRoute: typeof AuthSignupRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
-    '/_auth/signin': {
-      id: '/_auth/signin'
-      path: '/signin'
-      fullPath: '/signin'
-      preLoaderRoute: typeof AuthSigninRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
   }
 }
-
-interface AuthRouteRouteChildren {
-  AuthSigninRoute: typeof AuthSigninRoute
-  AuthSignupRoute: typeof AuthSignupRoute
-}
-
-const AuthRouteRouteChildren: AuthRouteRouteChildren = {
-  AuthSigninRoute: AuthSigninRoute,
-  AuthSignupRoute: AuthSignupRoute,
-}
-
-const AuthRouteRouteWithChildren = AuthRouteRoute._addFileChildren(
-  AuthRouteRouteChildren,
-)
 
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
@@ -256,7 +179,6 @@ const LegalRouteRouteWithChildren = LegalRouteRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AuthRouteRoute: AuthRouteRouteWithChildren,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   LegalRouteRoute: LegalRouteRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
