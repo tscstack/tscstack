@@ -3,4 +3,4 @@
 // example:
 // export const GREETING = "hi" as const;
 
-export const X_SOCIAL_URL = "https://x.com/itsithu" as const;
+export const X_SOCIAL_URL = "https://x.com/heysithu" as const;

@@ -1,5 +1,5 @@
 {
-  "projectName": "indieship",
+  "projectName": "yourappname",
   "mode": "file-router",
   "typescript": true,
   "packageManager": "bun",

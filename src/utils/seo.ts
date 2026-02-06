@@ -14,16 +14,16 @@ export const seoMeta = (opts: SeoOptions) => {
   const VITE_BASE_URL = import.meta.env.VITE_BASE_URL;
 
   const DEFAULT_TITLE =
-    "IndieShip - The Headless TanStack + Convex Boilerplate for Shipping Fast";
+    "TSC Stack - The Headless TanStack + Convex + Clerk Boilerplate for Shipping Fast";
 
   const {
     title,
     url,
-    siteName = "IndieShip",
-    description = "IndieShip is a headless TanStack + Convex boilerplate to ship SaaS apps fast. Built with TanStack Start, Clerk auth, strict TypeScript, shadcn/ui, and modern workflows—no fluff, just shipping.",
-    keywords = "TanStack + Convex boilerplate, TanStack + Convex starter kit, TanStack Start + Convex + Clerk, TanStack + Convex SaaS boilerplate, TanStack + Convex starter, TanStack + Convex Clerk auth, TanStack + Convex TypeScript starter, TanStack + Convex realtime SaaS, TanStack + Convex fullstack boilerplate, ship TanStack + Convex apps, IndieShip",
+    siteName = "TSC Stack",
+    description = "TSC Stack is a headless TanStack + Convex + Clerk boilerplate to ship SaaS apps fast. Built with TanStack Start, Clerk auth, strict TypeScript, shadcn/ui, and modern workflows—no fluff, just shipping.",
+    keywords = "TanStack + Convex + Clerk boilerplate, TanStack + Convex + Clerk starter kit, TanStack Start + Convex + Clerk, TanStack + Convex + Clerk SaaS boilerplate, TanStack + Convex + Clerk starter, TanStack + Convex + Clerk auth, TanStack + Convex + Clerk TypeScript starter, TanStack + Convex + Clerk realtime SaaS, TanStack + Convex + Clerk fullstack boilerplate, ship TanStack + Convex + Clerk apps, TSC Stack",
     ogImageUrl = `${VITE_BASE_URL}/og-image.png`,
-    twitterHandle = "@itsithu",
+    twitterHandle = "@heysithu",
     type = "website",
     locale = "en_US"
   } = opts;

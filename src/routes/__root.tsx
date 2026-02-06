@@ -14,7 +14,7 @@ import { ConvexQueryClient } from "@convex-dev/react-query";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 
 import { PostHogProvider } from "~/components/analytics/posthog-provider";
-import { BuiltWithIndieShip } from "~/components/built-with-indie-ship";
+import { BuiltWithTSCStack } from "~/components/built-with-tscstack";
 import { ErrorComponent } from "~/components/error-component";
 import { NotFoundComponent } from "~/components/not-found-component";
 import { ThemeProvider } from "~/components/theme-provider";
@@ -93,7 +93,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                 {children}
 
                 <div className="absolute bottom-2 left-2">
-                  <BuiltWithIndieShip />
+                  <BuiltWithTSCStack />
                 </div>
               </ThemeProvider>
             </ConvexProviderWithClerk>
