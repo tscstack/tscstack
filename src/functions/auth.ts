@@ -10,7 +10,7 @@ export const redirectIfAuthenticatedFn = createServerFn({
   const { isAuthenticated } = await auth();
 
   if (isAuthenticated) {
-    throw redirect({ to: "/dashboard" });
+    throw redirect({ to: process.env.CLERK_SIGN_IN_FORCE_REDIRECT_URL });
   }
 });
 
@@ -20,7 +20,10 @@ export const requireAuthFn = createServerFn({ method: "GET" })
     const { isAuthenticated, userId } = await auth();
 
     if (!isAuthenticated) {
-      throw redirect({ to: "/signin", search: { redirect: data?.href } });
+      throw redirect({
+        to: process.env.CLERK_SIGN_IN_URL,
+        search: { redirect: data?.href }
+      });
     }
 
     const user = await clerkClient().users.getUser(userId);
